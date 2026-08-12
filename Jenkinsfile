@@ -17,15 +17,8 @@ pipeline {
 
         stage('Package') {
             steps {
-                sh 'echo "Build Number: ${BUILD_NUMBER}" > build-info.txt'
-                sh 'echo "Build executed on $(date)" >> build-info.txt'
+                bat 'echo Packaging application...'
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'Build successful! Ready for release.'
         }
     }
 }
